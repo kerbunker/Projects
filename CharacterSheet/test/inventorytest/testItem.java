@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import Inventory.Item;
+import inventory.Item;
 
 public class testItem {
 	
@@ -23,19 +23,15 @@ public class testItem {
 		
 	}
 
-	@Test
-	public void testGetName() {
-		fail("Not yet implemented");
-	}
 
 	@Test
 	public void testSetDesc() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetDesc() {
-		fail("Not yet implemented");
+		Item item1 = new Item();
+		assertNull( item1.getDesc() );
+		item1.setDesc("a very yummy fruit");
+		assertEquals( item1.getDesc(), "a very yummy fruit" );
+		item1.setDesc( "a fruit with a name that is difficult to rhyme" );
+		assertEquals( item1.getDesc(), "a fruit with a name that is difficult to rhyme" );
 	}
 
 }
