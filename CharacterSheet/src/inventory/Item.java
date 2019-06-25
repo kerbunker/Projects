@@ -14,12 +14,24 @@ public class Item {
     private String description;
     
     private int value;
+    private boolean isAttuned;
     
     
     public Item()
     {
-    	name = null;
-    	description = null;
+    	this( null, null );
+    	
+    }
+    public Item( String name )
+    {
+    	this( name, null );
+    	
+    }
+    
+    public Item( String name, String desc )
+    {
+    	this.name = name;
+    	description = desc;
     	
     }
     
