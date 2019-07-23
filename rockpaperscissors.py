@@ -11,6 +11,7 @@ from random import randint
 rock = 1
 paper = 2
 scissors = 3
+valid = True
 
 user_move = input("What is your move(rock/r, paper/p, or scissors/s)? ")
 user_move = user_move.lower()
@@ -21,21 +22,30 @@ elif user_move == "paper" or user_move == "p":
 elif user_move == "scissors" or user_move == "s":
     user_move = scissors
 else:
-    "That is not a valid response."
+    valid = False
+    print ("That is not a valid response.")
 seed()
 comp_move = randint(1, 3)
 
-if comp_move == rock:
+if valid and comp_move == rock:
     if user_move == rock:
         print ("Tie! You both picked rock!")
     elif user_move == scissors:
         print("You Lose! Rock beats scissors.")
     else:
         print ("You win! Paper beats rock!")
-elif comp_move == paper:
+elif valid and comp_move == paper:
     if user_move == paper:
         print ("Tie! You both picked paper!")
     elif user_move == rock:
         print("You Lose! Paper beats rock.")
     else:
         print ("You win! Scissors beats paper!")
+elif valid:
+    if user_move == scissors:
+        print ("Tie! You both picked scissors!")
+    elif user_move == paper:
+        print("You Lose! Scissors beats paper.")
+    else:
+        print ("You win! Rock beats scissors!")
+        
