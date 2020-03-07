@@ -10,5 +10,9 @@ public class Material {
 		this.level = level;
 		this.gatherer = gatherer;
 	}
+	
+	public String getName() {
+		return name;
+	}
 
 }
