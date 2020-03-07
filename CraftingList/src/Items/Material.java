@@ -14,5 +14,13 @@ public class Material {
 	public String getName() {
 		return name;
 	}
+	
+	public int getLevel() {
+		return level;
+	}
+	
+	public String getGatherer() {
+		return gatherer;
+	}
 
 }
