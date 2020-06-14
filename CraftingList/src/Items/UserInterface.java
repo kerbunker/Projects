@@ -79,8 +79,9 @@ public class UserInterface {
 	public static void main(String[] args) {
 		
 		materialsList = new ArrayList<Material>();
+		//Scanner fileReader = new Scanner("inputFile.txt");
 		Scanner input = new Scanner(System.in);
-		System.out.print("What would you like to do? (new mat, new craft, get craft, get mat, exit)\n");
+		System.out.print("What would you like to do? (new mat, new craft, new craft list, get craft, get mat, get mat list, exit)\n");
 		while(input.hasNext()) {
 			
 			String userInput = input.nextLine();
@@ -95,6 +96,16 @@ public class UserInterface {
 				System.out.println("How is it gathered?");
 				String gatherer = input.next();
 				createMaterial(name, level, gatherer);
+			} else if(userInput.compareTo("new mat list")==0) {
+				System.out.println("How many?");
+				int craftNum = input.nextInt();
+				//Need to add check for if there are enough crafted items in the list already
+				String craftNames[craftNum] = new String[craftNum];
+				for( int i = 0; i < craftNum, i++ ) {
+					System.out.println("Name of first craft?");
+					craftNames[i] = input.nextLine();
+				}
+				//Add in method to create Craftinglist
 			} else if( userInput.compareTo("get mat")==0) {
 				System.out.println("Do you want all materials or search by name?");
 				userInput = input.nextLine();
@@ -110,6 +121,8 @@ public class UserInterface {
 						result.print();
 					}
 				}
+			} else if( userInput.compareTo("get mat list")==0) {
+				
 			}
 			System.out.print("What would you like to do? (new mat, new craft, get craft, get mat, exit)\n");
 		}
@@ -117,6 +130,7 @@ public class UserInterface {
 		
 		
 		input.close();
+		//fileScanner.close();
 	}
 
 }
